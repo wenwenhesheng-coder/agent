@@ -1,0 +1,4 @@
+# Optional semantic-vector dependencies.
+# The application falls back to its built-in bag-of-words embedder when absent.
+chromadb==0.4.24
+sentence-transformers==2.6.1

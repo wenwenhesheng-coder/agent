@@ -79,6 +79,40 @@ python run.py
 python run.py --demo
 ```
 
+### 4. 使用 Docker Compose
+
+```bash
+docker compose up --build
+```
+
+启动完成后访问：
+
+- Web 界面：http://localhost:8200
+- API 文档：http://localhost:8200/docs
+- 健康检查：http://localhost:8200/health
+
+默认不需要大模型 API Key，系统会使用 Mock 演示模式。需要连接真实模型时，
+可将 `.env.example` 复制为 `.env` 并填写相应 Provider 的 API Key。
+
+默认镜像使用内置轻量词袋向量，适合本地演示和 CPU 环境。如需安装
+`sentence-transformers` 与 ChromaDB，可执行：
+
+Linux/macOS：
+
+```bash
+INSTALL_ML_DEPS=1 docker compose build
+docker compose up
+```
+
+Windows PowerShell：
+
+```powershell
+$env:INSTALL_ML_DEPS = "1"
+docker compose build
+docker compose up
+Remove-Item Env:INSTALL_ML_DEPS
+```
+
 ## 多智能体协同流程
 
 ```

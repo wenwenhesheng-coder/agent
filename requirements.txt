@@ -10,12 +10,10 @@ pydantic-settings==2.2.1
 
 # --- LLM 调用 ---
 openai==1.14.0          # 兼容通义千问/智谱等OpenAI兼容接口
-httpx==0.7.0
+httpx==0.27.0
 aiohttp==3.9.3
 
-# --- RAG 向量检索 ---
-chromadb==0.4.24        # 向量数据库（支持私有化部署）
-sentence-transformers==2.6.1
+# --- RAG 向量检索（默认使用内置轻量词袋向量）---
 numpy==1.26.4
 tiktoken==0.6.0
 
